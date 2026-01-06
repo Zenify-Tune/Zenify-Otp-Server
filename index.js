@@ -24,7 +24,11 @@ const transporter = nodemailer.createTransport({
   auth: {
     user: EMAIL_USER,
     pass: EMAIL_PASS
-  }
+  },
+  tls: {
+    ciphers: 'SSLv3'
+  },
+  family: 4 // Force IPv4 to prevent IPv6 Timeouts
 });
 
 // ----------------------------------------------------------------------
